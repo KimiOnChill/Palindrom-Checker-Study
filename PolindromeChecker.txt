@@ -1,0 +1,233 @@
+//define vars from html
+const phrase = document.getElementById("text-input"); 
+const str = phrase.value;
+const button = document.getElementById("check-btn");
+const result = document.getElementById("result");
+
+const isPalindrome = () => {
+  //to keep the initial look
+  let str1 = str;
+  console.log(str1)
+
+  // //every letter lowcase
+  // let low = str.toLowerCase();
+  // console.log(low);
+  
+  // //regex to match all spaces
+  // let regex1 = /[)(\-/:;_.,\s]/g;
+  // //regex for non-alphanumeric characters
+  // let regex2 = /\w/g;
+
+  // //split each word and space into array    
+  // let arr = low.split(regex1);
+  // console.log(arr);
+  
+  // //get rid of spaces
+  // let aarr = arr.filter((item) => regex2.test(item) == true);
+  // console.log(aarr);
+  
+  // str = arr.join("");
+  // console.log(str);
+  
+  // //reversing
+  // let revStr = str.split("").reverse().join("");
+  // console.log(revStr);
+
+  // //return str == revStr ? true : false;
+  // //return 
+  // result.textContent = `${str1} is${str === revStr ? "" : " not"} a palindrome`
+};
+
+
+button.addEventListener("click", isPalindrome);
+
+//console.log(isPalindrome(phraseVal));
+---------------------------------------------------------------------
+:root {
+  --light-grey: #32de84;
+  --dark-blue: #0a0a23;
+  --fcc-blue: #043927;
+  --light-yellow: #fecc4c;
+  --dark-yellow: #feac32;
+  --light-pink: #ffadad;
+  --dark-red: #850000;
+  --light-green: #acd157;
+}
+
+body {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  background-color: var(--fcc-blue);
+  color: var(--light-grey);
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 680px;
+}
+
+h1,
+.container,
+.output {
+  margin: 20px auto;
+}
+
+label,
+legend {
+  font-weight: bold;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  cursor: pointer;
+  text-decoration: none;
+  background-color: var(--light-yellow);
+  border: 2px solid var(--dark-yellow);
+}
+
+button,
+input,
+select {
+  min-height: 24px;
+  color: var(--dark-blue);
+}
+
+fieldset,
+label,
+button,
+input,
+select {
+  margin-bottom: 10px;
+}
+
+.output {
+  border: 2px solid var(--light-grey);
+  padding: 10px;
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+.output span {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.surplus {
+  color: var(--light-pink);
+}
+
+.deficit {
+  color: var(--light-green);
+}
+-----------------------------------------------------------------------------
+//define vars from html
+let phrase = document.getElementById("text-input").value;
+let button = document.querySelector("#check-btn");
+let result = document.querySelector("#result");
+
+const isPalindrome = (str) => {
+  
+  let str1 = str;
+
+  //every letter lowcase
+  let low = str.toLowerCase();
+  console.log(low);
+  
+  //regex to match all spaces
+  let regex1 = /[)(\-/:;_.,\s]/g;
+  //regex for non-alphanumeric characters
+  let regex2 = /\w/g;
+
+  //split each word and space into array    
+  let arr = low.split(regex1);
+  console.log(arr);
+  
+  //get rid of spaces
+  let aarr = arr.filter((item) => regex2.test(item) == true);
+  console.log(aarr);
+  
+  str = arr.join("");
+  console.log(str);
+  
+  //a function to make reverse string
+  const reverseString = (str) => {
+  let n = 1;
+  let result = "";
+  while (n <= str.length){
+    let last = "";
+    last = str[str.length-n];
+    result += last;
+    n++;
+  }
+  return result;
+  }
+
+  let revStr = reverseString(str);
+  console.log(revStr);
+  //return str == revStr ? true : false;
+  return `${str1} is${str == revStr ? "" : " not"} a palindrome`
+} 
+
+
+button.addEventListener("click", () =>{
+  result.textContent = `${isPalindrome(phrase)}`;
+  });
+
+console.log(isPalindrome(phrase));     
+-----------------------------------------------------------------------------
+//without HTML connection
+const isPalindrome = (str) => {
+  
+  let str1 = str;
+
+  //every letter lowcase
+  let low = str.toLowerCase();
+  console.log(low);
+  
+  //regex to match all spaces
+  let regex1 = /[)(\-/:;_.,\s]/g;
+  //regex for non-alphanumeric characters
+  let regex2 = /\w/g;
+
+  //split each word and space into array    
+  let arr = low.split(regex1);
+  console.log(arr);
+  
+  //get rid of spaces
+  let aarr = arr.filter((item) => regex2.test(item) == true);
+  console.log(aarr);
+  
+  str = arr.join("");
+  console.log(str);
+  
+  //a function to make reverse string
+  const reverseString = (str) => {
+  let n = 1;
+  let result = "";
+  while (n <= str.length){
+    let last = "";
+    last = str[str.length-n];
+    result += last;
+    n++;
+  }
+  return result;
+  }
+
+  let revStr = reverseString(str);
+  console.log(revStr);
+  //return str == revStr ? true : false;
+  return `${str1} is${str == revStr ? "" : " not"} a palindrome`
+}
+
+console.log(isPalindrome("0_0 (: /-\ :) 0-0"));
