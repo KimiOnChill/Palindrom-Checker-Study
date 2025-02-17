@@ -36,7 +36,9 @@ const isPalindrome = () => {
   let revStr = str.split("").reverse().join("");
   console.log(revStr);
  
-  result.innerHTML = `<span class="accent">${str1}</span> is${str === revStr ? "" : " not"} a palindrome`
+  result.innerHTML = `<span class="accent">${str1}</span> is${str === revStr ? "" : " not"} a palindrome`;
+
+  result.classList.remove('hide');
 };
 
 button.addEventListener("click", isPalindrome);

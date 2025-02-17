@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="palstyles.css" />
     <title>Palindrome Checker</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <main>
-        <h1>Palindrome Checker</h1>
-        <div class="container">
+      <div class="container">
+        <h1 class="main-title">Palindrome Checker</h1>
 
-            <div class="container-enter">
-                <label for="text-input">Enter a phrase to check</label>
-                <input class="input" type="text" id="text-input" placeholder="Enter here"/>
-            </div>
+        <label class="container-enter-title" for="text-input">Enter a phrase to check</label>
+        <input
+          class="container-enter-input"
+          type="text"
+          id="text-input"
+          placeholder="Enter here"
+        />
 
-            <div class="container-button">
-                <button class="button" type="button" id="check-btn">
-                    Check
-                </button>
-            </div>
+        <button class="button" type="button" id="check-btn">Check</button>
 
-            <div id="result" class="output"></div>
-        </div>
+        <div id="result" class="output hide"></div>
+      </div>
     </main>
     <script src="palindrome.js"></script>
-</body>
+  </body>
 </html>

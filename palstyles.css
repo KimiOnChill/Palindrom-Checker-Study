@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   --light-grey: #32de84;
   --dark-blue: #0a0a23;
@@ -11,37 +17,61 @@
 
 body {
   font-family: "Lato", Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 25px;
   background-color: var(--fcc-blue);
   color: var(--light-grey);
-}
-
-h1 {
-  text-align: center;
+  margin: auto 0;
+  padding: 0;
+  width: 100%;
 }
 
 .container {
-  width: 90%;
-  max-width: 680px;
+  max-width: 1000px;
+  margin: 100px auto;
+  display: grid;
+  grid-template-columns: 500px 500px;
+  grid-template-rows: 125px 60px 60px 60px;
+  grid-template-areas:
+    'title title'
+    'label input'
+    'button button'
+    'result result';
+  row-gap: 40px;
 }
 
-h1,
-.container,
-.output {
-  margin: 20px auto;
+.main-title {
+  text-align: center;
+  grid-area: title;
 }
 
-label,
-legend {
+.container-enter-title {
+  text-align: center;
   font-weight: bold;
+  grid-area: label;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
-.input-container {
-  display: flex;
-  flex-direction: column;
+.container-enter-input {
+  grid-area: input;
+  background-color: transparent;
+  color: var(--result-red);
+  border: 2px solid #fff;
+  font-size: 25px;
+}
+
+.container-enter-input:focus {
+  background-color: transparent;
+  color: var(--result-red);
+}
+
+.container-enter-input:focus-visible {
+  background-color: transparent;
+  color: var(--result-red);
 }
 
 .button {
+  grid-area: button;
   cursor: pointer;
   text-decoration: none;
   background-color: var(--light-yellow);
@@ -52,36 +82,19 @@ legend {
   justify-self: center;
 }
 
-.button,
-.input {
-  min-height: 24px;
-  color: var(--dark-blue);
-}
-
 .button:hover {
   background-image: linear-gradient(#ffcc4c, #f89808);
 }
 
-fieldset,
-label,
-.button,
-.input {
-  margin-bottom: 10px;
-}
-
 .output {
+  grid-area: result;
   border: 2px solid var(--light-grey);
-  padding: 10px;
+  padding: 10px 50px;
   text-align: center;
 }
 
 .hide {
   display: none;
-}
-
-.result span {
-  font-weight: bold;
-  font-size: 1.2em;
 }
 
 .accent {
